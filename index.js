@@ -7,16 +7,24 @@ const { connect } = require("./src/db/database");
 const usersRouter = require("./src/routes/users");
 const { errorHandler } = require("./src/middlewares/errorHandler");
 
+const allowedOrigins = [
+  "https://user-manager-ui.vercel.app", 
+  "https://user-manager-bdbv6vwb1-areej-fatima.vercel.app",
+];
 
-const app = express();
-app.use(express.json());
-app.use(cors());
 app.use(
   cors({
-    origin: "https://user-manager-ui.vercel.app",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS not allowed"));
+      }
+    },
     credentials: true,
   })
 );
+
 app.use(morgan("dev"));
 
 app.use("/api/users", usersRouter);
