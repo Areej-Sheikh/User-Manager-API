@@ -6,6 +6,12 @@ const cors = require("cors");
 const { connect } = require("./src/db/database");
 const usersRouter = require("./src/routes/users");
 const { errorHandler } = require("./src/middlewares/errorHandler");
+app.use(
+  cors({
+    origin: "https://user-manager-ui.vercel.app",
+    credentials: true,
+  })
+);
 
 const app = express();
 app.use(express.json());
