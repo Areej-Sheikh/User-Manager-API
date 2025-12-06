@@ -1,4 +1,4 @@
-# 🛠️ CRUD App Backend (Node.js + Express + MongoDB)
+# 🛠️ User Management App Backend (Node.js + Express + MongoDB)
 
 A lightweight and scalable **REST API backend** built with:
 
