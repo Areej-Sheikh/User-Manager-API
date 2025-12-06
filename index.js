@@ -11,7 +11,7 @@ const allowedOrigins = [
   "https://user-manager-ui.vercel.app", 
   "https://user-manager-bdbv6vwb1-areej-fatima.vercel.app",
 ];
-
+const app = express(); 
 app.use(
   cors({
     origin: function (origin, callback) {
