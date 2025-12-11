@@ -1,14 +1,24 @@
 const express = require("express");
 const router = express.Router();
-const ctrl = require("../controllers/userController");
+const {
+  createUser,
+  getUsers,
+  getUser,
+  updateUser,
+  deleteUser,
+  notifyUsers,
+  usersByLocation,
+  analyticsDashboard,
+} = require("../controllers/userController");
 
-router.post("/", ctrl.createUser);
-router.get("/", ctrl.getUsers);
-router.get("/analytics/location", ctrl.usersByLocation);
-router.get("/analytics/dashboard", ctrl.analyticsDashboard);
-router.post("/notify", ctrl.notifyUsers); 
-router.get("/:id", ctrl.getUser);
-router.put("/:id", ctrl.updateUser);
-router.delete("/:id", ctrl.deleteUser);
+router.get("/", getUsers);
+router.post("/", createUser);
+router.get("/:id", getUser);
+router.put("/:id", updateUser);
+router.delete("/:id", deleteUser);
+
+router.post("/notify", notifyUsers);
+router.get("/analytics/users-by-location", usersByLocation);
+router.get("/analytics/dashboard", analyticsDashboard);
 
 module.exports = router;
