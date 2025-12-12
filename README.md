@@ -25,8 +25,8 @@ Technology | Purpose
 
 ###  Install Dependencies
 
-`cd backend`
-`npm install`
+- `cd backend`
+- `npm install`
 
 ###  Create .env File
 
