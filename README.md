@@ -51,11 +51,11 @@ Production:
 
 ### User Management
 
-`GET /api/users - Get all users`
-`POST /api/users - Create a new user`
-`GET /api/users/:id - Get user by ID`
-`PUT /api/users/:id - Update user`
-`DELETE /api/users/:id - Delete a user`
+- `GET /api/users - Get all users`
+- `POST /api/users - Create a new user`
+- `GET /api/users/:id - Get user by ID`
+- `PUT /api/users/:id - Update user`
+- `DELETE /api/users/:id - Delete a user`
 
 
 
